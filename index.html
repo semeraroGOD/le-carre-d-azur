@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Carré d'Azur — Agence immobilière</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --noir: #050505;
+      --noir-velours: #0e0e11;
+      --blanc: #f7f3ec;
+      --doré: #d3a849;
+      --doré-soft: #f3d68a;
+      --gris: #8c8c94;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--noir);
+      color: var(--blanc);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    img { max-width: 100%; display: block; }
+    header {
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(120deg, rgba(5,5,5,0.9), rgba(5,5,5,0.5)), url('https://files.catbox.moe/g9z13a.jpg') center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2.5rem 6vw;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: uppercase;
+      letter-spacing: 0.3rem;
+      font-size: 0.9rem;
+    }
+    nav .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.2rem;
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    nav a {
+      color: var(--blanc);
+      text-decoration: none;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -0.4rem;
+      width: 100%; height: 2px;
+      background: var(--doré);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    nav a:hover::after { transform: scaleX(1); }
+    .hero-content {
+      max-width: 640px;
+      margin: 6rem 0 3rem;
+    }
+    .eyebrow {
+      letter-spacing: 0.6rem;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      color: var(--doré-soft);
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+      color: var(--gris);
+      margin-bottom: 2.5rem;
+    }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .btn {
+      border: 1px solid var(--doré);
+      color: var(--doré);
+      padding: 0.9rem 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      font-size: 0.75rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: var(--doré);
+      color: var(--noir);
+    }
+    .btn:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+    }
+    section {
+      padding: 6rem 6vw;
+      background: var(--noir-velours);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    section.light {
+      background: #0b0b0d;
+    }
+    .section-heading {
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--doré-soft);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+    }
+    .signature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .signature-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.01);
+      min-height: 220px;
+    }
+    .signature-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--doré);
+      margin-bottom: 0.8rem;
+    }
+    .collections {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .collection-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 0.5rem;
+    }
+    .collection-title {
+      font-size: 1.8rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .collection-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .property-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #09090b;
+      display: flex;
+      flex-direction: column;
+    }
+    .property-card img { height: 220px; object-fit: cover; }
+    .property-body { padding: 1.5rem; display:flex; flex-direction:column; gap:1rem; }
+    .property-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: var(--gris);
+    }
+    .price {
+      font-size: 1.3rem;
+      color: var(--doré);
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .tag {
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 0.25rem 0.7rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+    }
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .timeline-step {
+      border-left: 2px solid var(--doré);
+      padding-left: 1rem;
+      min-height: 160px;
+    }
+    form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    input, textarea {
+      background: #0f0f12;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--blanc);
+      padding: 0.9rem;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    textarea { min-height: 140px; grid-column: 1 / -1; }
+    footer {
+      padding: 3rem 6vw 4rem;
+      background: #050505;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: var(--gris);
+    }
+    @media (max-width: 720px) {
+      nav ul { display: none; }
+      header { padding: 1.5rem 5vw; }
+      section { padding: 4rem 5vw; }
+    }
+  </style>
+</head>
+<body>
+  <header id="top">
+    <nav>
+      <div class="logo">Le Carré d'Azur</div>
+      <ul>
+        <li><a href="#signature">Signature</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#conciergerie">Conciergerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <div class="eyebrow">Agence Haute Couture</div>
+      <h1>Art de vivre riviera &amp; investissements d'exception</h1>
+      <p>Nos conseillers orchestrent des transactions discrètes entre la Côte d'Azur historique et les adresses contemporaines. Accès privilégié, accompagnement juridique, scénographie intérieure&nbsp;: chaque projet est traité comme une pièce unique.</p>
+      <div class="cta-group">
+        <a class="btn btn-primary" href="#collections">Découvrir nos collections</a>
+        <a class="btn" href="#contact">Rendez-vous privé</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="signature" class="light">
+    <div class="section-heading">Notre signature</div>
+    <div class="section-title">Sélection privée &amp; conciergerie patrimoniale</div>
+    <div class="signature-grid">
+      <article class="signature-card">
+        <h3>Collections Prestige</h3>
+        <p>Biens sourcés hors-marché, villas contemporaines et bastides historiques, visites scénarisées au coucher du soleil.</p>
+      </article>
+      <article class="signature-card">
+        <h3>Ingénierie patrimoniale</h3>
+        <p>Structuration fiscale, financement family office, suivi notarial et coordination architectes &amp; décorateurs.</p>
+      </article>
+      <article class="signature-card">
+        <h3>Expériences privées</h3>
+        <p>Chauffeur, chef à domicile, styliste d'intérieur : nous transformons la découverte en expérience sensorielle.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="collections">
+    <div class="section-heading">Collections</div>
+    <div class="section-title">Trois univers pour vos ambitions</div>
+    <div class="collections">
+      <div>
+        <div class="collection-header">
+          <h2 class="collection-title">Prestige</h2>
+          <span>Horizon dégagé, prestation haute couture</span>
+        </div>
+        <div class="collection-cards">
+          <article class="property-card">
+            <img src="https://files.catbox.moe/g9z13a.jpg" alt="Maison La Roquette-sur-Var">
+            <div class="property-body">
+              <div class="property-meta"><span>La Roquette-sur-Var</span><span class="price">780&nbsp;000&nbsp;€</span></div>
+              <h3>Villa Horizon</h3>
+              <p>Pièce de vie panoramique ouverte sur double terrasse, prestations contemporaines et vues alpines-méditerranéennes.</p>
+              <div class="tags">
+                <span class="tag">4 pièces</span>
+                <span class="tag">29 photos</span>
+                <span class="tag">Parfait état</span>
+              </div>
+            </div>
+          </article>
+          <article class="property-card">
+            <img src="https://files.catbox.moe/bx5tms.jpg" alt="Maison La Colle-sur-Loup avec piscine">
+            <div class="property-body">
+              <div class="property-meta"><span>La Colle-sur-Loup</span><span class="price">730&nbsp;000&nbsp;€</span></div>
+              <h3>Bastide signature</h3>
+              <p>117&nbsp;m² à détourner avec architecte, piscine miroir, végétation méditerranéenne — le terrain parfait pour une rénovation couture.</p>
+              <div class="tags">
+                <span class="tag">5 pièces</span>
+                <span class="tag">À rafraîchir</span>
+                <span class="tag">Piscine</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div>
+        <div class="collection-header">
+          <h2 class="collection-title">Exclusivités</h2>
+          <span>Accès restreint &amp; premières visites</span>
+        </div>
+        <div class="collection-cards">
+          <article class="property-card">
+            <img src="https://files.catbox.moe/qxw3ua.jpg" alt="Studio Villeneuve-Loubet">
+            <div class="property-body">
+              <div class="property-meta"><span>Villeneuve-Loubet</span><span class="price">129&nbsp;000&nbsp;€</span></div>
+              <h3>Loft mansardé</h3>
+              <p>Exclusivité sous combles : poutres apparentes, lumière traversante, charges contenues (340&nbsp;€/an), copropriété intime.</p>
+              <div class="tags">
+                <span class="tag">1 pièce</span>
+                <span class="tag">Bon état</span>
+                <span class="tag">Copro 7 lots</span>
+              </div>
+            </div>
+          </article>
+          <article class="property-card">
+            <img src="https://files.catbox.moe/2ttpgf.jpg" alt="Appartement 3 pièces Villeneuve-Loubet">
+            <div class="property-body">
+              <div class="property-meta"><span>Villeneuve-Loubet</span><span class="price">269&nbsp;000&nbsp;€</span></div>
+              <h3>Appartement traversant</h3>
+              <p>56&nbsp;m², cuisine ouverte sur séjour, balcon plein sud, exclusivité idéale pour résidence secondaire rapide.</p>
+              <div class="tags">
+                <span class="tag">3 pièces</span>
+                <span class="tag">Bon état</span>
+                <span class="tag">Exclusif</span>
+              </div>
+            </div>
+          </article>
+          <article class="property-card">
+            <img src="https://files.catbox.moe/h4nr6y.jpg" alt="Maison jardin La Colle-sur-Loup">
+            <div class="property-body">
+              <div class="property-meta"><span>La Colle-sur-Loup</span><span class="price">730&nbsp;000&nbsp;€</span></div>
+              <h3>Maison jardin secret</h3>
+              <p>4 pièces sur terrain arboré, potentiel agrandissement, exclusivité avant rénovation complète.</p>
+              <div class="tags">
+                <span class="tag">90&nbsp;m²</span>
+                <span class="tag">À rénover</span>
+                <span class="tag">Terrain</span>
+              </div>
+            </div>
+          </article>
+          <article class="property-card">
+            <img src="https://files.catbox.moe/qtpiqu.jpg" alt="Appartement Cagnes-sur-Mer">
+            <div class="property-body">
+              <div class="property-meta"><span>Cagnes-sur-Mer</span><span class="price">165&nbsp;000&nbsp;€</span></div>
+              <h3>Pied-à-terre Vespins</h3>
+              <p>2 pièces 41&nbsp;m², balcon + terrasse, ascenseur, exclusivité avant-première idéale investissement mer.</p>
+              <div class="tags">
+                <span class="tag">À rafraîchir</span>
+                <span class="tag">Balcon</span>
+                <span class="tag">Ascenseur</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div>
+        <div class="collection-header">
+          <h2 class="collection-title">Opportunités</h2>
+          <span>Investissements agiles &amp; prêts à louer</span>
+        </div>
+        <div class="collection-cards">
+          <article class="property-card">
+            <img src="https://files.catbox.moe/gu7feh.jpg" alt="Appartement Saint-Laurent-du-Var">
+            <div class="property-body">
+              <div class="property-meta"><span>Saint-Laurent-du-Var</span><span class="price">199&nbsp;000&nbsp;€</span></div>
+              <h3>Appartement bohème</h3>
+              <p>3 pièces lumineux, charges maîtrisées (1&nbsp;684&nbsp;€/an), copropriété de 18 lots, parfait pour location meublée.</p>
+              <div class="tags">
+                <span class="tag">Bon état</span>
+                <span class="tag">Copro 18</span>
+                <span class="tag">3 pièces</span>
+              </div>
+            </div>
+          </article>
+          <article class="property-card">
+            <img src="https://files.catbox.moe/g8k4lb.jpg" alt="Maison pierre Le Bar-sur-Loup">
+            <div class="property-body">
+              <div class="property-meta"><span>Le Bar-sur-Loup</span><span class="price">469&nbsp;000&nbsp;€</span></div>
+              <h3>Maison de pierre</h3>
+              <p>80&nbsp;m², 4 pièces, à rafraîchir — potentiel gîte ou résidence secondaire avec vue sur les collines.</p>
+              <div class="tags">
+                <span class="tag">À rafraîchir</span>
+                <span class="tag">4 pièces</span>
+                <span class="tag">14 photos</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="conciergerie" class="light">
+    <div class="section-heading">Conciergerie</div>
+    <div class="section-title">Un protocole privé du premier appel à l'installation</div>
+    <div class="timeline">
+      <div class="timeline-step">
+        <h3>01 · Brief</h3>
+        <p>Entretien confidentiel, cadrage budgétaire, cartographie de vos usages (résidence principale, pied-à-terre, locatif).</p>
+      </div>
+      <div class="timeline-step">
+        <h3>02 · Sélection</h3>
+        <p>Accès à notre portefeuille off-market, rapports techniques, projections financières.</p>
+      </div>
+      <div class="timeline-step">
+        <h3>03 · Expérience</h3>
+        <p>Visites privées scénarisées, transferts, mise en relation artisans &amp; décorateurs.</p>
+      </div>
+      <div class="timeline-step">
+        <h3>04 · Closing</h3>
+        <p>Suivi notarial, optimisation fiscale, services d'installation (domotique, cave, art).</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-heading">Rendez-vous privé</div>
+    <div class="section-title">Parlons de votre prochain chapitre</div>
+    <p>Nous répondons sous 12&nbsp;heures. Télégram&nbsp;: @LeCarreDAzur — WhatsApp &amp; ligne directe sur demande.</p>
+    <form>
+      <input type="text" placeholder="Nom complet">
+      <input type="email" placeholder="Email professionnel">
+      <input type="tel" placeholder="Téléphone / WhatsApp">
+      <input type="text" placeholder="Budget cible">
+      <textarea placeholder="Décrivez votre projet (achat, revente, investissement)"></textarea>
+      <button class="btn btn-primary" type="submit">Planifier un appel</button>
+    </form>
+  </section>
+
+  <footer>
+    <div>© 2026 Le Carré d'Azur — Transactions privées &amp; conciergerie patrimoniale.</div>
+    <div>Siège : 23 promenade des Arts, Nice — contact@lecarredazur.fr</div>
+  </footer>
+</body>
+</html>
