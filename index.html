@@ -3,462 +3,271 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Le Carré d'Azur | Immobilier de prestige Côte d'Azur - Julie Bellaiche</title>
-  <meta name="description" content="Le Carré d'Azur, agence immobilière de prestige sur la Côte d'Azur, propose des biens haut de gamme avec l'accompagnement personnalisé de Julie Bellaiche, experte locale.">
-  <meta name="keywords" content="immobilier de prestige,Côte d'Azur,biens haut de gamme,expertise locale,accompagnement personnalisé,Julie Bellaiche">
-  <link rel="canonical" href="https://semerarogod.github.io/le-carre-d-azur/">
+  <title>Le Carré Azur — Domaine Signature à La Colle-sur-Loup</title>
+  <meta name="description" content="Domaine provençal d'exception avec vues sur Saint-Paul-de-Vence. Piscine miroir, doubles bastides, jardins méditerranéens — présenté par Le Carré Azur.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --noir: #050505;
-      --noir-velours: #0e0e11;
-      --noir-graphite: #0b0b0d;
-      --blanc: #f7f3ec;
-      --doré: #d3a849;
-      --doré-soft: #f3d68a;
-      --gris: #9a9aa2;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Manrope', sans-serif;
-      background: var(--noir);
-      color: var(--blanc);
-      line-height: 1.65;
-      letter-spacing: 0.01em;
-      scroll-behavior: smooth;
-    }
-    img { max-width: 100%; display: block; }
-    header {
-      min-height: 90vh;
-      background: linear-gradient(120deg, rgba(5,5,5,0.9), rgba(5,5,5,0.3)), url('assets/images/la-roquette.jpg') center/cover;
-      padding: 2.75rem 7vw 6rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-transform: uppercase;
-      letter-spacing: 0.35rem;
-      font-size: 0.78rem;
-    }
-    nav .logo {
-      font-family: 'Fraunces', serif;
-      font-size: 1.2rem;
-      letter-spacing: 0.18rem;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.8rem;
-    }
-    nav a {
-      color: var(--blanc);
-      text-decoration: none;
-      position: relative;
-      padding-bottom: 0.2rem;
-    }
-    nav a::after {
-      content: '';
-      position: absolute;
-      left: 0; bottom: 0;
-      width: 100%; height: 1px;
-      background: var(--doré);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-    }
-    nav a:hover::after { transform: scaleX(1); }
-    .hero-content {
-      max-width: 640px;
-      margin-top: 6rem;
-      animation: fade-up 1s ease both;
-    }
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.55rem;
-      font-size: 0.7rem;
-      color: var(--doré-soft);
-      margin-bottom: 1.5rem;
-    }
-    h1 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(2.8rem, 6vw, 4.6rem);
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-    }
-    .hero-content p {
-      font-size: 1.05rem;
-      color: var(--gris);
-      margin-bottom: 2.2rem;
-    }
-    .cta-group { display: flex; flex-wrap: wrap; gap: 1rem; }
-    .btn {
-      border: 1px solid var(--doré);
-      color: var(--doré);
-      text-transform: uppercase;
-      letter-spacing: 0.2rem;
-      font-size: 0.72rem;
-      padding: 0.85rem 1.6rem;
-      text-decoration: none;
-      transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease;
-    }
-    .btn-primary { background: var(--doré); color: var(--noir); }
-    .btn:hover { transform: translateY(-2px); filter: brightness(1.08); }
-    main section {
-      padding: 6rem 7vw;
-      border-top: 1px solid rgba(255,255,255,0.04);
-      background: var(--noir-velours);
-    }
-    section.light { background: var(--noir-graphite); }
-    h2 {
-      font-family: 'Fraunces', serif;
-      font-size: 2.3rem;
-      margin-bottom: 1.6rem;
-    }
-    .intro-text { max-width: 720px; font-size: 1.02rem; color: var(--gris); margin-bottom: 3rem; }
-    .signature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.8rem;
-    }
-    .signature-card {
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 2rem 1.5rem;
-      background: rgba(255,255,255,0.015);
-      min-height: 220px;
-      transition: border 0.4s ease;
-    }
-    .signature-card:hover { border-color: var(--doré); }
-    .signature-card h3 {
-      font-family: 'Fraunces', serif;
-      color: var(--doré);
-      margin-bottom: 0.8rem;
-      font-size: 1.15rem;
-    }
-    .signature-card p { color: var(--gris); }
-    .advisor {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 3rem;
-      align-items: center;
-    }
-    .advisor img {
-      width: 100%;
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 0.8rem;
-      background: #000;
-      filter: grayscale(100%);
-    }
-    .advisor-text h3 {
-      font-family: 'Fraunces', serif;
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-    }
-    .advisor-text p { color: var(--gris); margin-bottom: 1rem; }
-    .signature-line {
-      width: 90px;
-      height: 1px;
-      background: var(--doré);
-      margin: 1.5rem 0;
-    }
-    .collections {
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
-    }
-    .collection-header {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding-bottom: 1rem;
-    }
-    .collection-header span { color: var(--gris); font-size: 0.95rem; }
-    .collection-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-    .property-card {
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(5,5,5,0.8);
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-      transition: transform 0.4s ease, border 0.4s ease;
-    }
-    .property-card:hover { transform: translateY(-6px); border-color: rgba(211,168,73,0.7); }
-    .property-card img { height: 220px; object-fit: cover; }
-    .property-body { padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; }
-    .property-meta { display: flex; justify-content: space-between; color: var(--gris); font-size: 0.9rem; }
-    .price { color: var(--doré); font-size: 1.2rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .tag { border: 1px solid rgba(255,255,255,0.12); padding: 0.2rem 0.65rem; font-size: 0.72rem; letter-spacing: 0.08rem; text-transform: uppercase; }
-    .timeline {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-    .timeline-step { border-left: 2px solid var(--doré); padding-left: 1.2rem; min-height: 170px; }
-    .timeline-step h3 { font-family: 'Fraunces', serif; margin-bottom: 0.6rem; }
-    form {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    input, textarea {
-      background: #0f0f12;
-      border: 1px solid rgba(255,255,255,0.08);
-      color: var(--blanc);
-      padding: 0.9rem;
-      font-size: 0.95rem;
-      font-family: inherit;
-    }
-    textarea { min-height: 150px; grid-column: 1 / -1; }
-    footer {
-      padding: 3rem 7vw 4rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      background: #050505;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1rem;
-      color: var(--gris);
-      font-size: 0.9rem;
-    }
-    [data-animate] { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    [data-animate].is-visible { opacity: 1; transform: translateY(0); }
-    @keyframes fade-up { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
-    @media (max-width: 860px) {
-      nav ul { display: none; }
-      header { padding: 2rem 6vw 4rem; }
-      main section { padding: 4.5rem 6vw; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header id="top">
-    <nav aria-label="Navigation principale">
-      <div class="logo">Le Carré d'Azur</div>
-      <ul>
-        <li><a href="#signature">Signature</a></li>
-        <li><a href="#advisor">Julie Bellaiche</a></li>
-        <li><a href="#collections">Collections</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="hero-content">
-      <p class="eyebrow">Immobilier de prestige · Côte d'Azur</p>
-      <h1>Immobilier de prestige sur la Côte d'Azur</h1>
-      <p>Le Carré d'Azur imagine des parcours sur mesure pour des biens haut de gamme, de Nice à Saint-Paul-de-Vence. Confidentialité, expertise locale et accompagnement personnalisé orchestrés par Julie Bellaiche, votre référente de confiance.</p>
-      <div class="cta-group">
-        <a class="btn btn-primary" href="#collections">Découvrir nos biens</a>
-        <a class="btn" href="#contact">Prendre rendez-vous</a>
+<body data-page="home">
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <div class="loader__logo">C</div>
+      <div class="loader__bar"><div class="loader__progress"></div></div>
+    </div>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <header class="nav" id="nav" role="banner">
+    <div class="nav__container">
+      <a href="#hero" class="nav__logo" aria-label="Accueil Le Carré Azur">
+        <span class="nav__logo-mark">C</span>
+        <span class="nav__logo-text">Le Carré <span class="nav__logo-amp">Azur</span></span>
+      </a>
+      <nav class="nav__menu" id="navMenu" role="navigation" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="#hero" class="nav__link nav-active">Maison</a></li>
+          <li><a href="#residence" class="nav__link">Domaine</a></li>
+          <li><a href="#galerie" class="nav__link">Galerie</a></li>
+          <li><a href="#prestations" class="nav__link">Prestations</a></li>
+          <li><a href="#visite" class="nav__link">Visite privée</a></li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <a href="tel:+33493000000" class="nav__phone" aria-label="Nous appeler">+33 (0)4 93 00 00 00</a>
+        <button class="nav__hamburger" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <main>
-    <section id="signature" class="light" aria-labelledby="signature-title">
-      <h2 id="signature-title">Signature Le Carré d'Azur</h2>
-      <p class="intro-text">Nous sélectionnons des biens haut de gamme sur la Côte d'Azur et coordonnons chaque étape avec précision : sourcing off-market, ingénierie patrimoniale et mise en scène de visites émotionnelles pour investisseurs et familles en quête d'un art de vivre rare.</p>
-      <div class="signature-grid" data-animate>
-        <article class="signature-card">
-          <h3>Collections privées</h3>
-          <p>Portefeuille discret de villas contemporaines, bastides historiques et appartements signés offrant vue mer, jardins paysagers et prestations haute couture.</p>
-        </article>
-        <article class="signature-card">
-          <h3>Expertise patrimoniale</h3>
-          <p>Conseil en fiscalité internationale, financement family office et coordination notariale pour sécuriser tout investissement immobilier de prestige.</p>
-        </article>
-        <article class="signature-card">
-          <h3>Expérience sur-mesure</h3>
-          <p>Visites privées scénarisées, transferts confidentiels, artisans et décorateurs triés sur le volet : un accompagnement personnalisé de bout en bout.</p>
-        </article>
-      </div>
-    </section>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul class="mobile-menu__list">
+      <li><a href="#hero" class="mobile-menu__link">Maison</a></li>
+      <li><a href="#residence" class="mobile-menu__link">Domaine</a></li>
+      <li><a href="#galerie" class="mobile-menu__link">Galerie</a></li>
+      <li><a href="#prestations" class="mobile-menu__link">Prestations</a></li>
+      <li><a href="#visite" class="mobile-menu__link">Visite privée</a></li>
+    </ul>
+    <div class="mobile-menu__contact">
+      <a href="tel:+33493000000">+33 (0)4 93 00 00 00</a>
+      <a href="mailto:bonjour@lecarreazur.com">bonjour@lecarreazur.com</a>
+    </div>
+  </div>
 
-    <section id="advisor" aria-labelledby="advisor-title">
-      <h2 id="advisor-title">Julie Bellaiche, voix de confiance</h2>
-      <div class="advisor" data-animate>
-        <figure>
-          <img src="assets/images/julie-bellaiche.jpg" alt="Portrait noir et blanc de Julie Bellaiche, agent immobilier de prestige" loading="lazy" width="400" height="400">
-        </figure>
-        <div class="advisor-text">
-          <h3>Agent immobilier de prestige &amp; experte locale</h3>
-          <p>Julie Bellaiche accompagne une clientèle française et internationale depuis plus de 15 ans. Sa parfaite connaissance des quartiers iconiques, des règles d'urbanisme locales et des réseaux d'artisans sécurise chaque acquisition.</p>
-          <p>Elle conçoit des stratégies discrètes pour valoriser votre patrimoine, que ce soit pour un pied-à-terre en bord de mer, une résidence familiale ou un investissement locatif premium.</p>
-          <div class="signature-line"></div>
-          <p><strong>Manifeste :</strong> confiance, sérieux, élégance et sens du détail — les codes de l'immobilier de prestige azuréen, mis au service d'un accompagnement personnalisé.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="collections" class="light" aria-labelledby="collections-title">
-      <h2 id="collections-title">Collections de biens haut de gamme</h2>
-      <p class="intro-text">Chaque bien est présenté avec un descriptif précis, des photographies natives et des informations transparentes pour faciliter la prise de décision. Découvrez nos sélections Prestige, Exclusivités et Opportunités de la Riviera française.</p>
-      <div class="collections">
-        <div data-animate>
-          <div class="collection-header">
-            <h3>Prestige</h3>
-            <span>Biens signature aux vues dégagées et prestations couture.</span>
+  <main class="page-fade">
+    <section class="hero hero--carre-azur" id="hero" aria-label="Le Carré Azur">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__overlay hero__overlay--azur" aria-hidden="true"></div>
+      <div class="container hero__layout">
+        <div class="hero__content">
+          <p class="hero__subtitle">Le Carré Azur · Côte d'Azur</p>
+          <h1 class="hero__title">
+            Art de vivre sur les hauteurs de <span class="gradient-text">Saint-Paul-de-Vence</span>
+          </h1>
+          <p class="hero__desc">Deux bastides jumelées baignées de lumière, une piscine miroir qui embrasse la vallée et des jardins suspendus où l’on passe du rosé de midi aux veillées d’été. Chaque terrasse cadre un point de vue iconique sur les remparts de Saint-Paul.</p>
+          <div class="hero__cta">
+            <a href="#visite" class="btn btn--primary">Planifier une visite privée</a>
+            <a href="#galerie" class="btn btn--outline">Parcourir la galerie</a>
           </div>
-          <div class="collection-cards">
-            <article class="property-card">
-              <img src="assets/images/la-roquette.jpg" alt="Villa contemporaine à La Roquette-sur-Var" loading="lazy">
-              <div class="property-body">
-                <div class="property-meta"><span>La Roquette-sur-Var</span><span class="price">780&nbsp;000&nbsp;€</span></div>
-                <h4>Villa Horizon</h4>
-                <p>Pièce de vie panoramique, doubles terrasses et prestations contemporaines sur les hauteurs de la Côte d'Azur.</p>
-                <div class="tags"><span class="tag">4 pièces</span><span class="tag">Parfait état</span><span class="tag">Vue dominante</span></div>
-              </div>
-            </article>
-            <article class="property-card">
-              <img src="assets/images/colle-piscine.jpg" alt="Bastide avec piscine à La Colle-sur-Loup" loading="lazy">
-              <div class="property-body">
-                <div class="property-meta"><span>La Colle-sur-Loup</span><span class="price">730&nbsp;000&nbsp;€</span></div>
-                <h4>Bastide Signature</h4>
-                <p>117&nbsp;m² à sublimer avec piscine miroir, terrain arboré et volumes prêts pour une rénovation haut de gamme.</p>
-                <div class="tags"><span class="tag">5 pièces</span><span class="tag">Piscine</span><span class="tag">À rafraîchir</span></div>
-              </div>
-            </article>
+          <div class="hero__stats hero__stats--azur">
+            <div>
+              <span class="hero__stats-label">Surface habitable</span>
+              <strong>520 m²</strong>
+            </div>
+            <div>
+              <span class="hero__stats-label">Suites</span>
+              <strong>6 suites</strong>
+            </div>
+            <div>
+              <span class="hero__stats-label">Terrain</span>
+              <strong>2 800 m² paysagés</strong>
+            </div>
           </div>
         </div>
-
-        <div data-animate>
-          <div class="collection-header">
-            <h3>Exclusivités</h3>
-            <span>Accès limité, annonces avant-première et copropriétés confidentielles.</span>
-          </div>
-          <div class="collection-cards">
-            <article class="property-card">
-              <img src="assets/images/villeneuve-studio.jpg" alt="Loft mansardé à Villeneuve-Loubet" loading="lazy">
-              <div class="property-body">
-                <div class="property-meta"><span>Villeneuve-Loubet</span><span class="price">129&nbsp;000&nbsp;€</span></div>
-                <h4>Loft mansardé</h4>
-                <p>Volumes sous combles, poutres apparentes, charges réduites : idéal pied-à-terre avec charme d'époque.</p>
-                <div class="tags"><span class="tag">1 pièce</span><span class="tag">Bon état</span><span class="tag">Copro 7 lots</span></div>
-              </div>
-            </article>
-            <article class="property-card">
-              <img src="assets/images/villeneuve-appart.jpg" alt="Appartement traversant à Villeneuve-Loubet" loading="lazy">
-              <div class="property-body">
-                <div class="property-meta"><span>Villeneuve-Loubet</span><span class="price">269&nbsp;000&nbsp;€</span></div>
-                <h4>Appartement traversant</h4>
-                <p>56&nbsp;m² lumineux avec cuisine ouverte, balcon plein sud et atmosphère contemporaine.</p>
-                <div class="tags"><span class="tag">3 pièces</span><span class="tag">Exclusivité</span><span class="tag">Bon état</span></div>
-              </div>
-            </article>
-            <article class="property-card">
-              <img src="assets/images/colle-jardin.jpg" alt="Maison jardin secret à La Colle-sur-Loup" loading="lazy">
-              <div class="property-body">
-                <div class="property-meta"><span>La Colle-sur-Loup</span><span class="price">730&nbsp;000&nbsp;€</span></div>
-                <h4>Maison jardin secret</h4>
-                <p>Terrain généreux, potentiel agrandissement et cadre verdoyant pour projet familial intimiste.</p>
-                <div class="tags"><span class="tag">90 m²</span><span class="tag">À rénover</span><span class="tag">Terrain</span></div>
-              </div>
-            </article>
-            <article class="property-card">
-              <img src="assets/images/cagnes-jardin.jpg" alt="Appartement avec terrasse à Cagnes-sur-Mer" loading="lazy">
-              <div class="property-body">
-                <div class="property-meta"><span>Cagnes-sur-Mer</span><span class="price">165&nbsp;000&nbsp;€</span></div>
-                <h4>Pied-à-terre Vespins</h4>
-                <p>Deux pièces avec balcon, terrasse et ascenseur, parfait pour un investissement proche mer.</p>
-                <div class="tags"><span class="tag">2 pièces</span><span class="tag">À rafraîchir</span><span class="tag">Ascenseur</span></div>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div data-animate>
-          <div class="collection-header">
-            <h3>Opportunités</h3>
-            <span>Investissements agiles prêts à louer ou à optimiser.</span>
-          </div>
-          <div class="collection-cards">
-            <article class="property-card">
-              <img src="assets/images/saint-laurent.jpg" alt="Appartement à Saint-Laurent-du-Var" loading="lazy">
-              <div class="property-body">
-                <div class="property-meta"><span>Saint-Laurent-du-Var</span><span class="price">199&nbsp;000&nbsp;€</span></div>
-                <h4>Appartement bohème</h4>
-                <p>3 pièces lumineux, charges maîtrisées et copropriété solide : rendement locatif immédiat.</p>
-                <div class="tags"><span class="tag">Bon état</span><span class="tag">3 pièces</span><span class="tag">Copro 18</span></div>
-              </div>
-            </article>
-            <article class="property-card">
-              <img src="assets/images/bar-sur-loup.jpg" alt="Maison en pierre au Bar-sur-Loup" loading="lazy">
-              <div class="property-body">
-                <div class="property-meta"><span>Le Bar-sur-Loup</span><span class="price">469&nbsp;000&nbsp;€</span></div>
-                <h4>Maison de pierre</h4>
-                <p>80&nbsp;m² à rafraîchir, vue sur les collines et potentiel gîte ou résidence secondaire premium.</p>
-                <div class="tags"><span class="tag">4 pièces</span><span class="tag">14 photos</span><span class="tag">À rafraîchir</span></div>
-              </div>
-            </article>
+        <div class="hero__media">
+          <figure class="hero__media-main">
+            <img src="assets/properties/la-colle/la-colle-1.jpg" alt="Piscine turquoise du domaine Le Carré Azur">
+            <figcaption>Vue centrale depuis la terrasse supérieure</figcaption>
+          </figure>
+          <div class="hero__media-stack">
+            <img src="assets/properties/la-colle/la-colle-4.jpg" alt="Façades provençales jumelées">
+            <img src="assets/properties/la-colle/la-colle-7.jpg" alt="Vue panoramique sur Saint-Paul-de-Vence">
           </div>
         </div>
       </div>
     </section>
 
-    <section id="conciergerie" aria-labelledby="conciergerie-title">
-      <h2 id="conciergerie-title">Conciergerie patrimoniale sur mesure</h2>
-      <p class="intro-text">Notre protocole privé couvre l'intégralité du cycle immobilier, depuis l'étude de votre projet jusqu'à l'installation de votre famille. Chaque étape est orchestrée pour garantir sérénité et confidentialité.</p>
-      <div class="timeline" data-animate>
-        <div class="timeline-step">
-          <h3>01 · Brief stratégique</h3>
-          <p>Audit confidentiel, cadrage budgétaire et définition des critères essentiels pour sélectionner les bons biens haut de gamme.</p>
+    <section class="section signature" id="residence" aria-labelledby="residence-title">
+      <div class="container signature__grid">
+        <div class="signature__intro">
+          <span class="section-label">Propriété signature</span>
+          <h2 class="section-title" id="residence-title">Double bastide, panoramas et jardins suspendus</h2>
+          <p>La Colle-sur-Loup dévoile ici son versant le plus confidentiel : deux maisons sœurs reliées par des terrasses en pierre, des cuisines ouvertes sur les patios et une circulation fluide entre intérieur et extérieur. L’architecture provençale authentique dialogue avec des aménagements contemporains pour offrir plusieurs scènes de vie dans une même adresse.</p>
+          <div class="signature__video">
+            <video controls preload="metadata" poster="assets/properties/la-colle/la-colle-2.jpg">
+              <source src="assets/properties/la-colle/la-colle-visite.mp4" type="video/mp4">
+              Votre navigateur ne gère pas la vidéo HTML5.
+            </video>
+            <span>Visite aérienne du domaine</span>
+          </div>
         </div>
-        <div class="timeline-step">
-          <h3>02 · Sélection privée</h3>
-          <p>Accès à notre portefeuille off-market, rapports techniques complets et projections financières comparées.</p>
-        </div>
-        <div class="timeline-step">
-          <h3>03 · Expérience de visite</h3>
-          <p>Visites scénarisées, transferts privés, rencontres avec architectes, décorateurs et artisans locaux.</p>
-        </div>
-        <div class="timeline-step">
-          <h3>04 · Closing &amp; installation</h3>
-          <p>Suivi notarial, optimisation fiscale, mise en service domotique, cave, art et services lifestyle.</p>
+        <div class="signature__details">
+          <div class="detail-card">
+            <span class="detail-card__label">Espaces de réception</span>
+            <p>Deux salons cathédrale ouverts sur la vallée, plafonds à poutres et baies vitrées plein sud.</p>
+          </div>
+          <div class="detail-card">
+            <span class="detail-card__label">Suites &amp; intimité</span>
+            <p>6 suites avec dressing, 4 salles d’eau principales + studio invité indépendant.</p>
+          </div>
+          <div class="detail-card">
+            <span class="detail-card__label">Extérieurs</span>
+            <p>Piscine miroir chauffée, pool house, patios ombragés, restanques plantées d’oliviers.</p>
+          </div>
+          <div class="detail-card">
+            <span class="detail-card__label">Fonctionnel</span>
+            <p>Stationnements couverts, atelier, caves climatisées, potentiel location saisonnière premium.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="light" aria-labelledby="contact-title">
-      <h2 id="contact-title">Prendre rendez-vous avec Julie Bellaiche</h2>
-      <p class="intro-text">Parlez-nous de votre projet immobilier de prestige sur la Côte d'Azur. Nous vous recontactons sous 12 heures pour organiser un échange confidentiel.</p>
-      <form>
-        <input type="text" name="name" placeholder="Nom complet" aria-label="Nom complet">
-        <input type="email" name="email" placeholder="Email professionnel" aria-label="Email professionnel">
-        <input type="tel" name="phone" placeholder="Téléphone / WhatsApp" aria-label="Téléphone">
-        <input type="text" name="budget" placeholder="Budget cible" aria-label="Budget">
-        <textarea name="project" placeholder="Décrivez votre projet : achat, revente, investissement" aria-label="Description du projet"></textarea>
-        <button class="btn btn-primary" type="submit">Planifier un appel privé</button>
-      </form>
-      <p style="margin-top:1.5rem; color:var(--gris);">Contact direct : Julie Bellaiche · julie@lecarredazur.fr · Télégram / WhatsApp sur demande.</p>
+    <section class="section gallery" id="galerie" aria-labelledby="galerie-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Galerie</span>
+          <h2 class="section-title" id="galerie-title">Les perspectives de la propriété</h2>
+          <p class="section-desc">Une sélection de vues drone, de pièces à vivre baignées de lumière et des échappées sur Saint-Paul.</p>
+        </div>
+        <div class="gallery__grid">
+          <figure class="gallery__item gallery__item--wide"><img src="assets/properties/la-colle/la-colle-3.jpg" alt="Vue large du domaine et de la piscine"></figure>
+          <figure class="gallery__item"><img src="assets/properties/la-colle/la-colle-5.jpg" alt="Salon avec poutres et ouvertures"></figure>
+          <figure class="gallery__item"><img src="assets/properties/la-colle/la-colle-6.jpg" alt="Cuisine campagne chic"></figure>
+          <figure class="gallery__item"><img src="assets/properties/la-colle/la-colle-7.jpg" alt="Vue panoramique sur Saint-Paul"></figure>
+          <figure class="gallery__item"><img src="assets/properties/la-colle/la-colle-8.jpg" alt="Terrasse dominant la vallée"></figure>
+          <figure class="gallery__item"><img src="assets/properties/la-colle/la-colle-9.jpg" alt="Cuisine lumineuse ouvrant sur patio"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section amenities" id="prestations" aria-labelledby="prestations-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Prestations</span>
+          <h2 class="section-title" id="prestations-title">Ce que propose Le Carré Azur</h2>
+        </div>
+        <div class="amenities__grid">
+          <article class="amenity-card">
+            <h3>Scénographie lumière</h3>
+            <p>Baies coulissantes plein sud, puits de lumière et stores motorisés pour orchestrer chaque ambiance du lever au coucher.</p>
+          </article>
+          <article class="amenity-card">
+            <h3>Cuisine double</h3>
+            <p>Deux cuisines équipées (piano, cave à vins, office traiteur) pour recevoir simultanément famille et convives.</p>
+          </article>
+          <article class="amenity-card">
+            <h3>Wellness &amp; plein air</h3>
+            <p>Piscine miroir 12×6 m chauffée, douche extérieure, jardinières aromatiques, zones yoga face aux collines.</p>
+          </article>
+          <article class="amenity-card">
+            <h3>Services sur mesure</h3>
+            <p>Conciergerie signature, chef privé, transferts Nice Côte d’Azur, préparation location saisonnière premium.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact contact--azur" id="visite" aria-labelledby="visite-title">
+      <div class="container contact__grid">
+        <div>
+          <span class="section-label">Visite privée</span>
+          <h2 class="section-title" id="visite-title">Réserver votre créneau confidentiel</h2>
+          <p>Nous organisons des visites limitées, sur rendez-vous uniquement. Indiquez vos disponibilités et votre mode de contact préféré : notre concierge vous répond sous 2h.</p>
+          <ul class="contact__list">
+            <li><strong>Adresse :</strong> Quartier Sainte-Anne, La Colle-sur-Loup</li>
+            <li><strong>Téléphone :</strong> <a href="tel:+33493000000">+33 (0)4 93 00 00 00</a></li>
+            <li><strong>Email :</strong> <a href="mailto:bonjour@lecarreazur.com">bonjour@lecarreazur.com</a></li>
+          </ul>
+        </div>
+        <form class="contact__form">
+          <div class="form-group">
+            <label for="name">Nom &amp; prénom</label>
+            <input type="text" id="name" placeholder="Julie Martin" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="vous@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="tel" id="phone" placeholder="+33" required>
+          </div>
+          <div class="form-group">
+            <label for="date">Semaine souhaitée</label>
+            <input type="text" id="date" placeholder="À partir du 18 mars">
+          </div>
+          <div class="form-group">
+            <label for="message">Votre message</label>
+            <textarea id="message" rows="4" placeholder="Parlez-nous de votre projet"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Envoyer la demande</button>
+          <p class="form-privacy">Vos informations restent confidentielles et ne sont jamais partagées.</p>
+        </form>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <span>© 2026 Le Carré d'Azur · Immobilier de prestige Côte d'Azur.</span>
-    <span>Nice · 23 promenade des Arts · +33 4 92 00 00 00 · contact@lecarredazur.fr</span>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#hero" class="footer__logo">
+            <span class="nav__logo-mark">C</span>
+            <span class="nav__logo-text">Le Carré <span class="nav__logo-amp">Azur</span></span>
+          </a>
+          <p class="footer__tagline">Sélection de propriétés iconiques, accompagnement discret, signatures sur-mesure sur la Côte d'Azur.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Pinterest"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.403 7.602 11.086-.105-.94-.2-2.382.042-3.41.218-.93 1.406-5.928 1.406-5.928s-.358-.716-.358-1.775c0-1.663.964-2.906 2.164-2.906 1.021 0 1.514.766 1.514 1.684 0 1.026-.653 2.56-.99 3.984-.281 1.191.597 2.162 1.77 2.162 2.125 0 3.754-2.24 3.754-5.47 0-2.86-2.058-4.86-4.995-4.86-3.402 0-5.4 2.55-5.4 5.185 0 1.025.394 2.125.888 2.722.098.12.112.225.083.347-.09.38-.287 1.191-.326 1.356-.051.218-.166.264-.384.16-1.432-.666-2.327-2.757-2.327-4.434 0-3.614 2.623-6.93 7.559-6.93 3.969 0 7.056 2.83 7.056 6.61 0 3.946-2.487 7.12-5.937 7.12-1.16 0-2.252-.602-2.625-1.312l-.713 2.714c-.258.992-.964 2.235-1.438 2.993C9.914 23.833 10.937 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Visites</h4>
+          <ul>
+            <li><a href="#visite">Planifier une rencontre</a></li>
+            <li><a href="#galerie">Télécharger la brochure</a></li>
+            <li><a href="#prestations">Fiche technique</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+33493000000">+33 (0)4 93 00 00 00</a></li>
+            <li><a href="mailto:bonjour@lecarreazur.com">bonjour@lecarreazur.com</a></li>
+            <li>Quartier Sainte-Anne, La Colle-sur-Loup</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Newsletter privée</h4>
+          <p>Entre villas confidentielles et adresses off-market, recevez notre sélection trimestrielle.</p>
+          <form class="footer__newsletter" aria-label="Inscription newsletter">
+            <input type="email" placeholder="Votre email" required aria-label="Email">
+            <button type="submit" aria-label="S'inscrire">→</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Le Carré Azur. Tous droits réservés.</p>
+        <p class="footer__credit">Design studio — WingfieldGemini</p>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
