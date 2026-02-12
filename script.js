@@ -218,6 +218,35 @@
     }, { passive: true });
   }
 
+  
+  // --- Carousel logic ---
+  const carousel = document.querySelector('[data-carousel]');
+  if (carousel) {
+    const track = carousel.querySelector('.carousel__track');
+    const slides = Array.from(track.children);
+    const prevBtn = document.querySelector('[data-carousel-prev]');
+    const nextBtn = document.querySelector('[data-carousel-next]');
+    let index = 0;
+
+    function updateCarousel() {
+      const slideWidth = slides[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap || 24);
+      track.style.transform = `translateX(${-index * slideWidth}px)`;
+    }
+
+    function next() {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+    }
+    function prev() {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+    }
+
+    nextBtn?.addEventListener('click', next);
+    prevBtn?.addEventListener('click', prev);
+    window.addEventListener('resize', updateCarousel);
+  }
+
   // --- Property card 3D tilt ---
   document.querySelectorAll('.property-card').forEach((card) => {
     card.addEventListener('mousemove', (e) => {

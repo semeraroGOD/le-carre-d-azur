@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mandat de recherche — Le Carré Azur</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="inner">
+  <header class="nav nav--inner" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-mark">C</span>
+        <span class="nav__logo-text">Le Carré <span class="nav__logo-amp">Azur</span></span>
+      </a>
+      <nav class="nav__menu">
+        <ul class="nav__list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="proprietes.html">Propriétés</a></li>
+          <li><a href="recherche.html" class="nav-active">Recherche</a></li>
+          <li><a href="estimation.html">Estimation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-fade">
+    <section class="page-header">
+      <div class="page-header__bg"></div>
+      <div class="container">
+        <div class="page-header__content">
+          <nav class="breadcrumb">
+            <a href="index.html">Accueil</a>
+            <span class="breadcrumb__sep">/</span>
+            <span class="breadcrumb__current">Recherche</span>
+          </nav>
+          <h1 class="page-header__title">Mandat de <span class="gradient-text">Recherche Privée</span></h1>
+          <p class="page-header__desc">Brief sur-mesure pour expatriés, investisseurs ou familles souhaitant une implantation discrète sur la Côte d’Azur.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact">
+      <div class="container contact__grid">
+        <div>
+          <h2>Process en trois temps</h2>
+          <ol class="property-showcase__list">
+            <li>Brief &amp; cahier des charges (30 min vidéo ou réunion).</li>
+            <li>Repérages terrain + pré-visites vidéo chaque semaine.</li>
+            <li>Négociation, due diligence, installation.</li>
+          </ol>
+          <p>Nos honoraires sont indexés sur la réussite (success fee). Nous limitons le nombre de briefs simultanés.</p>
+        </div>
+        <form class="contact__form">
+          <div class="form-group">
+            <label for="fullName">Nom &amp; prénom</label>
+            <input type="text" id="fullName" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="budget">Budget indicatif</label>
+            <select id="budget">
+              <option>3 – 5 M€</option>
+              <option>5 – 10 M€</option>
+              <option>10 M€ +</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="zones">Zones ciblées</label>
+            <input type="text" id="zones" placeholder="Ex : Cap d’Antibes, Mougins, Villefranche">
+          </div>
+          <div class="form-group">
+            <label for="message">Brief</label>
+            <textarea id="message" rows="4" placeholder="Typologie, timing, contraintes..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Envoyer le brief</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <span class="nav__logo-mark">C</span>
+            <span class="nav__logo-text">Le Carré <span class="nav__logo-amp">Azur</span></span>
+          </a>
+          <p class="footer__tagline">Sélection de propriétés iconiques, accompagnement discret.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

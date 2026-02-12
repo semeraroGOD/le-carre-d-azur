@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Le Carré Azur</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="inner">
+  <header class="nav nav--inner" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-mark">C</span>
+        <span class="nav__logo-text">Le Carré <span class="nav__logo-amp">Azur</span></span>
+      </a>
+      <nav class="nav__menu">
+        <ul class="nav__list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="proprietes.html">Propriétés</a></li>
+          <li><a href="recherche.html">Recherche</a></li>
+          <li><a href="estimation.html">Estimation</a></li>
+          <li><a href="contact.html" class="nav-active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-fade">
+    <section class="page-header">
+      <div class="page-header__bg"></div>
+      <div class="container">
+        <div class="page-header__content">
+          <nav class="breadcrumb">
+            <a href="index.html">Accueil</a>
+            <span class="breadcrumb__sep">/</span>
+            <span class="breadcrumb__current">Contact</span>
+          </nav>
+          <h1 class="page-header__title">Contact &amp; <span class="gradient-text">Rendez-vous</span></h1>
+          <p class="page-header__desc">Bureau au village de Saint-Paul-de-Vence. Visites uniquement sur réservation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact">
+      <div class="container contact__grid">
+        <div>
+          <h2>Coordonnées</h2>
+          <ul class="contact__list">
+            <li><strong>Téléphone :</strong> <a href="tel:+33493000000">+33 (0)4 93 00 00 00</a></li>
+            <li><strong>Email :</strong> <a href="mailto:bonjour@lecarreazur.com">bonjour@lecarreazur.com</a></li>
+            <li><strong>Adresse :</strong> 12 rue Grande, 06570 Saint-Paul-de-Vence</li>
+            <li><strong>Horaires :</strong> Lundi - Samedi, 9h - 19h</li>
+          </ul>
+        </div>
+        <form class="contact__form">
+          <div class="form-group">
+            <label for="name">Nom &amp; prénom</label>
+            <input type="text" id="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Sujet</label>
+            <select id="subject">
+              <option>Visite propriété</option>
+              <option>Mandat de recherche</option>
+              <option>Estimation</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <span class="nav__logo-mark">C</span>
+            <span class="nav__logo-text">Le Carré <span class="nav__logo-amp">Azur</span></span>
+          </a>
+          <p class="footer__tagline">Sélection de propriétés iconiques, accompagnement discret.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

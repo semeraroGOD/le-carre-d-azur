@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estimation Confidentielle — Le Carré Azur</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="inner">
+  <header class="nav nav--inner" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-mark">C</span>
+        <span class="nav__logo-text">Le Carré <span class="nav__logo-amp">Azur</span></span>
+      </a>
+      <nav class="nav__menu">
+        <ul class="nav__list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="proprietes.html">Propriétés</a></li>
+          <li><a href="recherche.html">Recherche</a></li>
+          <li><a href="estimation.html" class="nav-active">Estimation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-fade">
+    <section class="page-header">
+      <div class="page-header__bg"></div>
+      <div class="container">
+        <div class="page-header__content">
+          <nav class="breadcrumb">
+            <a href="index.html">Accueil</a>
+            <span class="breadcrumb__sep">/</span>
+            <span class="breadcrumb__current">Estimation</span>
+          </nav>
+          <h1 class="page-header__title">Estimation &amp; Préparation <span class="gradient-text">Off-Market</span></h1>
+          <p class="page-header__desc">Nous analysons la valeur de votre propriété, définissons le récit et proposons une stratégie de diffusion ciblée.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact">
+      <div class="container contact__grid">
+        <div>
+          <h2>Ce que comprend notre estimation</h2>
+          <ul class="property-showcase__list">
+            <li>Analyse comparative (transactions récentes + biens concurrents).</li>
+            <li>Plan de mise en scène : photo/vidéo, storytelling, diffusion.</li>
+            <li>Recommandations juridiques et fiscalité (lien notaire &amp; avocat).</li>
+          </ul>
+          <p>Nous signons systématiquement un accord de confidentialité avant toute visite.</p>
+        </div>
+        <form class="contact__form">
+          <div class="form-group">
+            <label for="owner">Nom &amp; prénom</label>
+            <input type="text" id="owner" required>
+          </div>
+          <div class="form-group">
+            <label for="property">Adresse ou secteur</label>
+            <input type="text" id="property" placeholder="Cap d’Antibes, Mougins..." required>
+          </div>
+          <div class="form-group">
+            <label for="surface">Surface &amp; pièces</label>
+            <input type="text" id="surface" placeholder="Ex : 420 m², 6 suites">
+          </div>
+          <div class="form-group">
+            <label for="deadline">Délai souhaité</label>
+            <select id="deadline">
+              <option>Signature < 3 mois</option>
+              <option>Signature < 6 mois</option>
+              <option>Étude seulement</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="notes">Contexte</label>
+            <textarea id="notes" rows="4" placeholder="Travaux, contraintes, attentes..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Recevoir mon estimation</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <span class="nav__logo-mark">C</span>
+            <span class="nav__logo-text">Le Carré <span class="nav__logo-amp">Azur</span></span>
+          </a>
+          <p class="footer__tagline">Sélection de propriétés iconiques, accompagnement discret.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
