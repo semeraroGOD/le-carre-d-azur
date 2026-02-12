@@ -1616,3 +1616,109 @@ button { cursor: pointer; }
   .nav, .loader, .cursor, .cursor-follower, .hero__scroll { display: none; }
   body { background: white; color: black; }
 }
+
+/* --- Portfolio Cards --- */
+.portfolio { background: var(--color-bg); }
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+.portfolio-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.portfolio-card__image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+.portfolio-card__image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.portfolio-card__image::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.55));
+}
+.portfolio-card__image span { position: relative; z-index: 2; }
+.portfolio-card__tag {
+  position: absolute; bottom: var(--space-sm); left: var(--space-sm);
+  padding: 0.35rem 0.8rem; border-radius: 999px;
+  background: rgba(5,4,5,0.7);
+  font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--color-gold);
+}
+.portfolio-card__image--placeholder {
+  background: linear-gradient(135deg, #201327, #1a1e32);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-text-muted);
+  text-align: center;
+  font-size: 0.9rem;
+}
+.portfolio-card__body { padding: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-sm); flex: 1; }
+.portfolio-card__body h3 { font-size: 1.2rem; font-weight: 600; color: var(--color-white); }
+.portfolio-card__meta { display: flex; gap: var(--space-sm); flex-wrap: wrap; font-size: 0.8rem; color: var(--color-text-dim); }
+
+/* --- Property Showcase --- */
+.property-showcase { background: var(--color-bg-alt); }
+.property-showcase__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+.property-showcase__media {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+.property-showcase__media figure {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+}
+.property-showcase__media figure:nth-child(1) { grid-column: span 2; height: 320px; }
+.property-showcase__media img { width: 100%; height: 100%; object-fit: cover; }
+.property-showcase__content p { color: var(--color-text-muted); margin-bottom: var(--space-md); }
+.property-showcase__list { list-style: none; padding: 0; margin: 0 0 var(--space-lg); display: grid; gap: var(--space-xs); }
+.property-showcase__list li { padding-left: 1.5rem; position: relative; font-size: 0.95rem; color: var(--color-text); }
+.property-showcase__list li::before { content: '•'; position: absolute; left: 0; color: var(--color-gold); }
+.property-showcase__cta { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+
+@media (max-width: 1024px) {
+  .property-showcase__grid { grid-template-columns: 1fr; }
+  .property-showcase__media figure:nth-child(1) { grid-column: span 1; height: 260px; }
+}
+
+/* --- Property Preview Placeholders --- */
+.property-preview { background: var(--color-bg); }
+.property-preview__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+.property-preview__grid--alt { grid-template-columns: 1.1fr 0.9fr; }
+.property-preview__placeholder {
+  min-height: 320px;
+  border-radius: var(--radius-xl);
+  border: 1px dashed rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  background: linear-gradient(135deg, rgba(248,210,220,0.08), rgba(39,27,44,0.6));
+}
+.property-preview__content p { color: var(--color-text-muted); margin-bottom: var(--space-md); }
+.property-preview__content .property-showcase__list { margin-bottom: 0; }
+@media (max-width: 1024px) {
+  .property-preview__grid,
+  .property-preview__grid--alt { grid-template-columns: 1fr; }
+}
